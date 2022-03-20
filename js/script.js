@@ -132,8 +132,8 @@ const updateGuessedWord = function (guessedLetters) {
     }
   }
   wordInProgress.innerText = showWord.join("");
-  console.log(showWord);
-  checkPlayerWon();
+  // console.log(showWord);
+  checkIfWin();
 };
 
 const countRemainingGuesses = function (guess) {
@@ -141,6 +141,11 @@ const countRemainingGuesses = function (guess) {
   if (!wordToUpper.includes(guess)) {
     message.innerText = `Sorry the word does not contain ${guess}`;
     remainingGuessesCount -= 1;
+  } else if (
+    wordToUpper.includes(guess) &&
+    wordToUpper === wordInProgress.innerText
+  ) {
+    message.innerHTML = `<p class="highlight">You guessed the correct word! Congrats!</p>`;
   } else {
     message.innerText = `Nice! The word has the letter ${guess}`;
   }
@@ -155,12 +160,13 @@ const countRemainingGuesses = function (guess) {
   }
 };
 
-const checkPlayerWon = function () {
+const checkIfWin = function () {
   if (word.toUpperCase() === wordInProgress.innerText) {
     message.classList.add("win");
     message.innerHTML = `<p class="highlight">You guessed the correct word! Congrats!</p>`;
 
     startOver();
+    console.log(message);
   }
 };
 

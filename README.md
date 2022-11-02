@@ -1,6 +1,6 @@
 # guess-the-word
 
-# Skillcrush Project - Github Repo Gallery Project
+# Skillcrush Project - Guess the Word Game
 
 This is a tutorial project I completed with [Skillcrush](https://skillcrush.com/). I followed the instructions given by Skillcrush to create this game. This project creates a game where players have 8 guesses to guess the word that is randomly generated using an API. I coded the JavaScript, API request and used the dev tools to complete this project.
 
